@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h2>NHẬP VÀO ĐÂY</h2>
+    <textarea id="hienthi" rows="5"cols="50" onkeypress="xuLyNhap(event)">
+</textarea>
+</div>
+<script>
+    let count=0;
+    let mang=[]
+    let loiNhan = "Happy new year :))))"
+    function xuLyNhap(event) {
+        mang.push(loiNhan[count])
+        event.preventDefault();
+        document.getElementById("hienthi").value=mang.join("")
+        count++
+        if (count>loiNhan.length){
+            document.getElementById("hienthi").value="";
+            count =0;
+            mang=[];
+        }
+    }
+</script>
+</body>
+</html>
